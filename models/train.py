@@ -54,8 +54,10 @@ def main(args):
         learning_rate=args.lr,            # most impactful HP
         weight_decay=0.01,               # L2 regularisation
         warmup_ratio=0.1,
-        eval_strategy="epoch",
+        evaluation_strategy="epoch",
         save_strategy="epoch",
+        logging_strategy="steps",      # ADD THIS
+        logging_steps=50,  
         load_best_model_at_end=True,
         metric_for_best_model="eval_loss",
         greater_is_better=False,
